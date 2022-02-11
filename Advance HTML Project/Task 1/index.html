@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="form">
+        <form>
+            <label for="product-name">PRODUCT NAME</label>
+            <input type="text" id="product-name" class="text-input" required>
+            
+            <label for="unit-measure">UNIT OF MEASUREMENT</label>
+            <input type="text" id="unit-measure" class="text-input" required>
+            
+            <label for="price">PRICE</label>
+            <input type="text" id="price" class="text-input" required>
+            
+            <label for="product-image">PRODUCT IMAGE</label>
+            <input type="file" id="product-image" required>
+            <div id="upload-btn">
+                <input type="button" class="btn-upload" value="Upload File" onclick="document.getElementById('product-image').click();">
+                <div id="upload-display"></div>
+            </div>
+            <label for="product-disc">PRODUCT DISCRIPTION</label>
+            <textarea name="comments" id="comments" class="text-input" rows="5" cols="1" required></textarea>
+
+            <div class="low-btn">
+                <input type="button" value="Submit" class = "btn" id="submit">
+                <input type="reset" value="Reset" class = "btn">
+            </div>
+        </form>
+    </div>
+
+    <div id="table" class="display">
+        <header>
+            <h2>Product Added</h2>
+        </header>
+        <div>
+            <table id="styled-table">
+                <tr id="header">
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Discription</th>
+                    <th>Price</th>
+                    <th>Unit Of Measure</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+    <div class="btn">
+        <button id="show">Show Record</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

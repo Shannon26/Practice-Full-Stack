@@ -1,0 +1,57 @@
+<form class="form" [formGroup]='registerForm'>
+    <div class="title">Welcome</div>
+    <div class="subtitle">Let's add the Employee Details</div>
+
+    <div class="input-container ic1">
+        <input [class.is-invalid]="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" id="name" formControlName ="name" class="input" type="text" placeholder=" " >
+        <div class="cut"></div>
+        <label for="name" class="placeholder">Name</label>
+        <small [class.dnone]="registerForm.get('name')?.valid || registerForm.get('name')?.untouched" class="is-invalid">Name is Required</small>
+    </div>
+
+    <div class="input-container ic2">
+        <input [class.is-invalid]="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" id="email" formControlName ="email" class="input" type="email" placeholder=" " >
+        <div class="cut cut-short"></div>
+        <label for="email" class="placeholder">Email</label>
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+            <small *ngIf="registerForm.get('email')?.errors?.['required']" class="is-invalid">Email is Required</small>
+            <small *ngIf="registerForm.get('email')?.errors?.['pattern']" class="is-invalid">Email is Incorrect</small>
+        </div>
+    </div>
+
+    <div class="input-container ic2">
+        <input [class.is-invalid]="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched" id="phone" formControlName ="phone" class="input" type="number" placeholder=" " minlength="4">
+        <div class="cut cut-short"></div>
+        <label for="phone" class="placeholder">Phone</label>
+        <div *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched">
+            <small *ngIf="registerForm.get('phone')?.errors?.['required']" class="is-invalid"> Phone is Required</small>
+            <!-- <small *ngIf="registerForm.get('phone')?.errors?.['minlength']" class="is-invalid">Phone must be of 10 digit</small> -->
+            <small *ngIf="registerForm.get('phone')?.errors?.['pattern']" class="is-invalid">Phone must be of 10 digit</small>
+        </div>
+    </div>
+    <div class="input-container ic1">
+        <input id="DoB" formControlName ="DoB" class="input" type="date" placeholder=" " >
+        <div class="cut"></div>
+        <label for="DoB" class="placeholder">Date Of Birth</label>
+    </div>
+
+    <div class="address" formGroupName = "address">
+        <div class="input-container ic1">
+            <input id="street" formControlName ="street" class="input" type="text" placeholder=" " >
+            <div class="cut"></div>
+            <label for="street" class="placeholder">Street</label>
+        </div>
+        <div class="input-container ic1">
+            <input id="city" formControlName ="city" class="input" type="text" placeholder=" " >
+            <div class="cut"></div>
+            <label for="city" class="placeholder">City</label>
+        </div>
+        <div class="input-container ic1">
+            <input id="pincode" formControlName ="pincode" class="input" type="number" placeholder=" " >
+            <div class="cut"></div>
+            <label for="pincode" class="placeholder">PinCode</label>
+        </div>
+    </div>
+    <button type="text" class="submit" (click)="submitForm()">submit</button>
+</form>
+

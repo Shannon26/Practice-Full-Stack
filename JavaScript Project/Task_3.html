@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <title>JQuery Assignment</title>
+   <style>
+       .infoPallete{
+           transition: 300ms;
+           animation: comeIn 3s linear 0s 1 forwards;
+       }
+       .infoPallete:hover{
+           background-color: rgb(255, 238, 238);
+           transform: scale(1,1.1);
+           
+        }
+
+        @keyframes comeIn{
+            0%{
+                position: relative;
+                left: -100vw;
+            }
+            70%{
+                left:10px;
+            }
+            100%{
+                position: static;
+            }
+        }
+   </style>
+</head>
+ 
+<body>
+   <div id="comments" style="border: 1px solid green;padding:1rem;margin-bottom: 0.5rem;">
+   </div>
+   <button id="load">Load Data</button>
+   <script>
+
+       var comments = $('#comments');
+
+
+       $.ajax({
+           type:'GET',
+           url:'https://jsonplaceholder.typicode.com/posts',
+           success: function(data){
+               let count = 0;
+
+                document.getElementById("load").onclick = function(){
+                    comments.append(
+                        '<div id="'+data[count]['id']+'" class="infoPallete"> <h3 class="title">'+data[count]['title']+'</h3> <p class="body">'+data[count]['body']+'</p> </div>'
+                        );
+                    count++;
+                };
+           }
+       });
+   </script>
+</body>
+ </html> 

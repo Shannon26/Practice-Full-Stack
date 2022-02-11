@@ -1,0 +1,129 @@
+.display{
+    display: none;
+}
+
+
+div.btn button{
+    margin-top: 50px;
+    width: 6rem;
+    height: 2.5rem;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: rgb(255, 255, 255);
+    background-color: blue;
+    border: 2px solid rgba(146, 146, 146, 0.219);
+    cursor: pointer;
+}
+
+#form{
+    color: rgb(102, 102, 102);
+    font-size: 1rem;
+}
+form{
+    height: auto;
+    width: 30vw;
+    background-color: #dbdbdb;
+}
+
+form input[type="file"]{
+    display: none;
+}
+
+form label{
+    display: block;
+    margin: 0.5rem;
+    padding-top: 1rem;
+}
+form input{
+    display: block;
+    margin: 0.5rem;
+    width: 95%;
+    height: 1.5rem;
+    align-items: center;
+    border: none;
+}
+
+form textarea{
+    display: block;
+    margin: 0.5rem;
+    width: 95%;
+    height: 6rem;
+    align-items: center;
+    border: none;
+    resize: none;
+}
+
+form .low-btn{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+form input.btn{
+    display: flex;
+    justify-content: center;
+    width: 6rem;
+    height: 2.5rem;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: rgb(255, 255, 255);
+    background-color: blue;
+    border: 2px solid rgba(146, 146, 146, 0.219);
+    cursor: pointer;
+}
+
+form #upload-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: auto;
+    background-color: #dbdbdb;
+    border: 1px dashed gray;
+    margin: 10px;
+}
+
+form #upload-btn:active{
+    
+}
+
+.btn-upload{
+    cursor: pointer;
+}
+
+form div input{
+    width: 10rem;
+    height: 2.5rem;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: rgb(76, 0, 255);
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(4, 21, 255);
+}
+
+
+
+/* Display Table */
+table{
+    width: 100%;
+}
+
+table th{
+    text-align: left;
+    padding: 1rem;
+}
+
+table td{
+    border-top: 1px solid rgba(56, 56, 56, 0.253);
+    border-bottom: 1px solid rgba(56, 56, 56, 0.253);
+    padding: 1rem;
+}
